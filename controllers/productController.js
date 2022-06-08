@@ -1,56 +1,145 @@
-const create = async (req,res) => {
+const Product = require("../models").Product
+const Images = require("../models").ProductImage
+const create = async (req, res) => {
     try {
+        const {
+            nameHy,
+            nameRu,
+            nameEn,
+            descriptionHy,
+            descriptionRu,
+            descriptionEn,
+            video,
+            categoryId,
+            images
+        } = req.body
 
-    }catch (e) {
+        const newProduct = await Product.create({
+            nameHy,
+            nameRu,
+            nameEn,
+            descriptionHy,
+            descriptionRu,
+            descriptionEn,
+            video,
+            categoryId
+        })
+        images.split(',').forEach(async img => {
+            await Images.create({
+                productId: newPost.id,
+                image: img
+            })
+        })
+    } catch (e) {
         console.log('something went wrong', e)
     }
 }
 
 
-const getAll = async (req,res) => {
+const getAll = async (req, res) => {
     try {
+        const offset = Number.parseInt(req.query.offset) || 0;
+        const limit = Number.parseInt(req.query.limit) || 2;
+        const allPosts = await Product.findAll({
+            offset: offset * limit,
+            limit,
+            include: [PostImage]
+        })
+        const all = await Product.findAll()
 
-    }catch (e) {
+        return res.json({products: allPosts, count: all.length})
+    } catch (e) {
         console.log('something went wrong', e)
     }
 }
 
-const getSingle = async (req,res) => {
+const getSingle = async (req, res) => {
     try {
-
-    }catch (e) {
+        const {id} = req.query
+        const post = await Product.findOne({
+            where: {id},
+            include: [Images]
+        })
+        return res.json(post)
+    } catch (e) {
         console.log('something went wrong', e)
     }
 }
 
-const edit = async (req,res) => {
+const edit = async (req, res) => {
     try {
+        const {
+            id,
+            nameHy,
+            nameRu,
+            nameEn,
+            descriptionHy,
+            descriptionRu,
+            descriptionEn,
+            video,
+        } = req.body
 
-    }catch (e) {
+        const product = await Product.findOne({where: {id}})
+        product.nameHy = nameHy,
+            product.nameRu = nameRu,
+            product.nameEn = nameEn,
+            product.descriptionHy = descriptionHy,
+            product.descriptionRu = descriptionRu,
+            product.descriptionEn = descriptionEn,
+            product.video = video,
+            await product.save()
+        return res.json(product)
+    } catch (e) {
         console.log('something went wrong', e)
     }
 }
 
-const deleteProduct = async (req,res) => {
+const deleteProduct = async (req, res) => {
     try {
-
-    }catch (e) {
+        const {id} = req.body
+        await Product.destroy({
+            where: {id}
+        })
+        const postImages = await Images.findAll({
+            where: {
+                postId: id
+            }
+        })
+        postImages.forEach(async item => {
+            await Images.destroy({
+                where: {
+                    postId: item.id
+                }
+            })
+        })
+        return res.json({success: true})
+    } catch (e) {
         console.log('something went wrong', e)
     }
 }
 
-const editImage = async (req,res) => {
+const editImage = async (req, res) => {
     try {
+        const {id, img} = req.body
+        const image = await Images.findOne({
+            where: {id}
+        })
 
-    }catch (e) {
+        image.image = img
+        await image.save()
+        return res.json(image)
+    } catch (e) {
         console.log('something went wrong', e)
     }
 }
 
-const deleteImage = async (req,res) => {
+const deleteImage = async (req, res) => {
     try {
-
-    }catch (e) {
+        const {id} = req.body
+        await Images.destroy({
+            where: {id}
+        })
+    } catch (e) {
         console.log('something went wrong', e)
     }
 }

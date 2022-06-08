@@ -1,6 +1,12 @@
+const Category = require("../models").Category
+
 const create = async (req,res) => {
     try {
-
+        const {nameHy,nameRu,nameEn} = req.body
+        const newCategory =await Category.create({
+            nameHy,nameRu,nameEn
+        })
+        return res.json(newCategory)
     }catch (e) {
         console.log('something went wrong')
     }
@@ -8,7 +14,8 @@ const create = async (req,res) => {
 
 const getAll = async (req,res) => {
     try {
-
+        const allCategories = await Category.findAll()
+        return res.json(allCategories)
     }catch (e) {
         console.log('something went wrong')
     }
@@ -16,7 +23,15 @@ const getAll = async (req,res) => {
 
 const edit = async (req,res) => {
     try {
+        const {id,nameHy,nameRu,nameEn} = req.body
 
+        const category = await Category.findOne({where:{id}})
+
+        category.nameHy = nameHy
+        category.nameRu = nameRu
+        category.nameEn = nameEn
+        await category.save()
+        return res.json(category)
     }catch (e) {
         console.log('something went wrong')
     }
@@ -24,7 +39,9 @@ const edit = async (req,res) => {
 
 const deleteCategory = async (req,res) => {
     try {
-
+        const {id} = req.body
+        await Category.destroy({where:{id}})
+        return res.json({success:true})
     }catch (e) {
         console.log('something went wrong')
     }
