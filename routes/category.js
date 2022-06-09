@@ -3,8 +3,12 @@ var router = express.Router();
 const categoryController = require('../controllers/categoryController')
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
-router.post('/', adminMiddleware, categoryController.create)
+//user routes
 router.get('/', categoryController.getAll)
+
+
+//admin routes
+router.post('/', adminMiddleware, categoryController.create)
 router.post('/edit', adminMiddleware, categoryController.edit)
 router.post('/delete', adminMiddleware, categoryController.deleteCategory)
 

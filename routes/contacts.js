@@ -4,6 +4,6 @@ const contactsController = require('../controllers/contactsController')
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
 router.post('/',adminMiddleware,contactsController.edit)
-router.get('/',adminMiddleware,contactsController.getAll)
+router.get('/',contactsController.getAll)
 
 module.exports = router

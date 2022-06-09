@@ -11,12 +11,16 @@ const categoryRouter = require("./routes/category")
 const productRouter = require("./routes/product")
 const orderRouter = require("./routes/order")
 const videoRouter = require("./routes/videos")
+const videoBanner = require("./routes/videoBanner")
 const subscriberRouter = require("./routes/subscribers")
 const aboutUsRouter = require("./routes/aboutUs")
 const contactsRouter = require("./routes/contacts")
+const homeBannerRouter = require("./routes/homeBanner")
+const homeFooter = require("./routes/homeFooter")
+const detailFooter = require("./routes/detailFooter")
 require('dotenv').config()
 var app = express();
-app.use(cors)
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -27,6 +31,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1/admin', adminRouter);
@@ -34,10 +39,13 @@ app.use('/api/v1/category', categoryRouter);
 app.use('/api/v1/product', productRouter);
 app.use('/api/v1/order', orderRouter);
 app.use('/api/v1/video', videoRouter);
+app.use('/api/v1/videoBanner', videoBanner);
 app.use('/api/v1/subscribers', subscriberRouter);
 app.use('/api/v1/aboutUs', aboutUsRouter);
 app.use('/api/v1/contacts', contactsRouter);
-
+app.use('/api/v1/homeBanner', homeBannerRouter);
+app.use('/api/v1/homeFooter', homeFooter);
+app.use('/api/v1/detailFooter', detailFooter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

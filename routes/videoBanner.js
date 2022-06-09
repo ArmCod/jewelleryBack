@@ -1,15 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const videosController = require('../controllers/videoController')
+const videosController = require('../controllers/videoBannerController')
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
-//user routes
 router.get('/',videosController.getAll)
-router.get('/single',videosController.getSingle)
-
 //admin routes
 router.post('/',adminMiddleware,videosController.create)
-router.post('/edit',adminMiddleware,videosController.edit)
-router.post('/delete',adminMiddleware,videosController.deleteVideo)
+router.post('/',adminMiddleware,videosController.edit)
 
 module.exports = router

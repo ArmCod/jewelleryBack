@@ -13,7 +13,6 @@ const create = async (req, res) => {
             categoryId,
             images
         } = req.body
-
         const newProduct = await Product.create({
             nameHy,
             nameRu,
@@ -26,10 +25,11 @@ const create = async (req, res) => {
         })
         images.split(',').forEach(async img => {
             await Images.create({
-                productId: newPost.id,
+                productId: newProduct.id,
                 image: img
             })
         })
+        return res.json(newProduct)
     } catch (e) {
         console.log('something went wrong', e)
     }
@@ -43,10 +43,9 @@ const getAll = async (req, res) => {
         const allPosts = await Product.findAll({
             offset: offset * limit,
             limit,
-            include: [PostImage]
+            include: [Images]
         })
         const all = await Product.findAll()
-
         return res.json({products: allPosts, count: all.length})
     } catch (e) {
         console.log('something went wrong', e)
