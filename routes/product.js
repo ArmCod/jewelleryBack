@@ -11,6 +11,7 @@ router.get('/single',prodController.getSingle)
 router.post('/',adminMiddleWare,prodController.create)
 router.post('/edit',adminMiddleWare,prodController.edit)
 router.post('/delete',adminMiddleWare,prodController.deleteProduct)
+router.post('/addImage',adminMiddleWare,prodController.addImage)
 router.post('/deleteImage',adminMiddleWare,prodController.deleteImage)
 router.post('/editImage',adminMiddleWare,prodController.editImage)
 

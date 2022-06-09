@@ -1,5 +1,6 @@
 const Product = require("../models").Product
 const Images = require("../models").ProductImage
+const {Op} = require('sequelize');
 const create = async (req, res) => {
     try {
         const {
@@ -21,9 +22,9 @@ const create = async (req, res) => {
             descriptionRu,
             descriptionEn,
             video,
-            categoryId
+            categoryId: Number(categoryId)
         })
-        images.split(',').forEach(async img => {
+        await images.split(',').forEach(async img => {
             await Images.create({
                 productId: newProduct.id,
                 image: img
@@ -38,12 +39,23 @@ const create = async (req, res) => {
 
 const getAll = async (req, res) => {
     try {
+        const {search} = req.query
         const offset = Number.parseInt(req.query.offset) || 0;
         const limit = Number.parseInt(req.query.limit) || 2;
+        let queryObj = {}
+        if (search) {
+            queryObj["nameHy"] = {
+                [Op.substring]: String(search)
+            }
+        }
         const allPosts = await Product.findAll({
+            where: queryObj,
             offset: offset * limit,
             limit,
-            include: [Images]
+            include: [Images],
+            order: [
+                ['createdAt', 'DESC']
+            ]
         })
         const all = await Product.findAll()
         return res.json({products: allPosts, count: all.length})
@@ -101,13 +113,13 @@ const deleteProduct = async (req, res) => {
         })
         const postImages = await Images.findAll({
             where: {
-                postId: id
+                productId: id
             }
         })
         postImages.forEach(async item => {
             await Images.destroy({
                 where: {
-                    postId: item.id
+                    productId: item.id
                 }
             })
         })
@@ -143,6 +155,19 @@ const deleteImage = async (req, res) => {
     }
 }
 
+const addImage = async (req, res) => {
+    try {
+        const {productId, image} = req.body
+        await Images.create({
+            productId,
+            image
+        })
+        return res.json({success: true})
+    } catch (e) {
+        console.log('something went wrong', e)
+    }
+}
+
 module.exports = {
     create,
     getAll,
@@ -150,6 +175,7 @@ module.exports = {
     edit,
     deleteProduct,
     editImage,
-    deleteImage
+    deleteImage,
+    addImage
 }
 

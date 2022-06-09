@@ -6,7 +6,8 @@ const create = async (req,res) => {
         const newCategory =await Category.create({
             nameHy,nameRu,nameEn
         })
-        return res.json(newCategory)
+        const allCategories = await Category.findAll()
+        return res.json(allCategories)
     }catch (e) {
         console.log('something went wrong')
     }
@@ -31,7 +32,8 @@ const edit = async (req,res) => {
         category.nameRu = nameRu
         category.nameEn = nameEn
         await category.save()
-        return res.json(category)
+        const allCategories = await Category.findAll()
+        return res.json(allCategories)
     }catch (e) {
         console.log('something went wrong')
     }
@@ -41,7 +43,8 @@ const deleteCategory = async (req,res) => {
     try {
         const {id} = req.body
         await Category.destroy({where:{id}})
-        return res.json({success:true})
+        const allCategories = await Category.findAll()
+        return res.json(allCategories)
     }catch (e) {
         console.log('something went wrong')
     }
