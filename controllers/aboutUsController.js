@@ -17,7 +17,7 @@ const createUp = async (req, res) => {
 
 const getAllUp = async (req, res) => {
     try {
-        const banner = await AboutUp.findAll()
+        const banner = await AboutUp.findAll({where: {id: 1}})
         return res.json(banner)
     } catch (e) {
         console.log("something went wrong", e)
@@ -57,7 +57,7 @@ const createDown = async (req, res) => {
 
 const getAllDown = async (req, res) => {
     try {
-        const abouts = await AboutDown.findAll()
+        const abouts = await AboutDown.findAll({where: {id: 1}})
         return res.json(abouts)
     } catch (e) {
         console.log("something went wrong", e)
@@ -66,7 +66,7 @@ const getAllDown = async (req, res) => {
 
 const editDown = async (req, res) => {
     try {
-        const {textHy, textRu, textEn, imgOne, imgTwo,imgThree} = req.body
+        const {textHy, textRu, textEn, imgOne, imgTwo, imgThree} = req.body
         const banner = await AboutDown.findOne({where: {id: 1}});
         banner.textHy = textHy
         banner.textRu = textRu

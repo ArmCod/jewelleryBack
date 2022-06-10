@@ -20,7 +20,7 @@ const edit = async (req, res) => {
 const getAll = async (req,res) => {
     try{
         const items = await Contact.findAll()
-        return res.json(ites)
+        return res.json(items)
     }catch (e) {
         console.log('something went wrong',e)
     }

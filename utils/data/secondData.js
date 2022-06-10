@@ -70,7 +70,6 @@ const subscribers = [
 
 const aboutUp = [
     {
-        id: 1,
         textHy: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letras",
         textRu: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letras",
         textEn: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letras",
@@ -83,7 +82,6 @@ const aboutUp = [
 
 const aboutDown = [
     {
-        id: 1,
         textHy: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letras",
         textRu: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letras",
         textEn: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letras",
@@ -97,7 +95,6 @@ const aboutDown = [
 
 const contacts = [
     {
-        id:1,
         location: "Yerevan",
         phone: "099999999",
         email: "example@mail.com",
@@ -110,7 +107,6 @@ const contacts = [
 
 const homeBanner = [
     {
-        id:1,
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDhOqwVY1g_tvt_XmSlFgzynvjzBsYh5zOcA&usqp=CAU",
         textHy: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
         textRu: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
@@ -119,7 +115,6 @@ const homeBanner = [
         createdAt: "2022-06-09T09:38:58.086Z"
     },
     {
-        id:2,
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmaDEXLMztDzQXlsvQ7p9ETf9u18Be41iyEA&usqp=CAU",
         textHy: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
         textRu: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
@@ -128,7 +123,6 @@ const homeBanner = [
         createdAt: "2022-06-09T09:38:58.086Z"
     },
     {
-        id:3,
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTScWXDzrZ9lOe_oqTgJew9nsguKhfeNJMAw&usqp=CAU",
         textHy: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
         textRu: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
@@ -140,7 +134,6 @@ const homeBanner = [
 
 const homeFooter = [
     {
-        id:1,
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTScWXDzrZ9lOe_oqTgJew9nsguKhfeNJMAw&usqp=CAU",
         titleHy: "Home hy",
         titleRu: "Home ru",
@@ -155,7 +148,6 @@ const homeFooter = [
 
 const detailFooter = [
     {
-        id:1,
         image:"https://media.gettyimages.com/photos/pictured-dababy-jewelry-detail-arrives-to-the-2021-billboard-music-picture-id1319707307?s=594x594" ,
         titleHy: "Detail hy",
         titleRu: "Detail ru",
@@ -170,7 +162,6 @@ const detailFooter = [
 
 const videoBanner = [
     {
-        id:1,
         image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_QzxTtZGYayFKpI8WweSdLtoDnpA4kUXHvQ&usqp=CAU",
         textHy: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
         textRu: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets cont",
@@ -179,6 +170,7 @@ const videoBanner = [
         createdAt: "2022-06-09T09:38:58.086Z"
     }
 ]
+
 
 module.exports = {
     videos,

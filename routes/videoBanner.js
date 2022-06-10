@@ -6,6 +6,6 @@ const adminMiddleware = require('../middlewares/adminMiddleware')
 router.get('/',videosController.getAll)
 //admin routes
 router.post('/',adminMiddleware,videosController.create)
-router.post('/',adminMiddleware,videosController.edit)
+router.post('/edit',adminMiddleware,videosController.edit)
 
 module.exports = router

@@ -4,10 +4,10 @@ const contactsController = require('../controllers/homeBannerController')
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
 //user routes
-router.post('/',contactsController.create)
+router.get('/',contactsController.getAll)
 
 //admin routes
-router.get('/',adminMiddleware,contactsController.getAll)
+router.post('/',adminMiddleware,contactsController.create)
 router.post('/deleteSlide',adminMiddleware,contactsController.deleteSlide)
 router.post('/editSlide',adminMiddleware,contactsController.editSlide)
 
