@@ -1,4 +1,3 @@
-const {Subscribers} = require("../models");
 const Video = require("../models").Video
 
 
@@ -18,9 +17,9 @@ const deleteVideo = async (req, res) => {
     try {
         const {id} = req.body
         await Video.destroy({
-            where:{id}
+            where: {id}
         })
-        return res.json({success:true})
+        return res.json({success: true})
     } catch (e) {
         console.log("something went wrong", e)
     }
@@ -28,9 +27,9 @@ const deleteVideo = async (req, res) => {
 
 const edit = async (req, res) => {
     try {
-        const {id,video} = req.body
+        const {id, video} = req.body
         const item = await Video.findOne({
-            where:{id}
+            where: {id}
         })
         item.video = video
         await item.save()
@@ -60,7 +59,7 @@ const getSingle = async (req, res) => {
     try {
         const {id} = req.query
         const item = await Video.findOne({
-            where:{id}
+            where: {id}
         })
         return res.json(item)
 

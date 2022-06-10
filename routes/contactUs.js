@@ -4,4 +4,7 @@ const contactsUsController = require('../controllers/contactUsController')
 const adminMiddleware = require('../middlewares/adminMiddleware')
 
 router.post('/', contactsUsController.create)
+router.get('/', adminMiddleware, contactsUsController.getAll)
+router.post('/sendAnswer', adminMiddleware, contactsUsController.sendAnswer)
+router.post('/delete', adminMiddleware, contactsUsController.deleteItem)
 module.exports = router

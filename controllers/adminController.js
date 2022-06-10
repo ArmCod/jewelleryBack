@@ -68,9 +68,9 @@ const login = async (req,res) => {
 
 const logout = async (req,res) => {
     try {
-        const {id} = req.body
+        const {email} = req.body
         const admin = await Admin.findOne({
-            where:{id}
+            where:{email}
         })
         admin.token = null
         await admin.save()

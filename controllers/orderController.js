@@ -1,6 +1,6 @@
 const Product = require("../models").Product
 const Order = require("../models").Order
-
+const productImage = require("../models").ProductImage
 const create = async (req, res) => {
     try {
         const {
@@ -16,6 +16,7 @@ const create = async (req, res) => {
             text,
             productId
         })
+        return res.json(newOrder)
     } catch (e) {
         console.log('something went wrong')
     }
@@ -29,13 +30,19 @@ const getAll = async (req, res) => {
         const allPosts = await Order.findAll({
             offset: offset * limit,
             limit,
-            include: [Product]
+            include: [{
+                model: Product,
+                include: [productImage]
+            }],
+            order: [
+                ['createdAt', 'DESC']
+            ]
         })
         const all = await Order.findAll()
 
         return res.json({posts: allPosts, count: all.length})
     } catch (e) {
-        console.log('something went wrong')
+        console.log('something went wrong',e)
     }
 }
 
@@ -43,7 +50,8 @@ const deleteOrder = async (req, res) => {
     try {
         const {id} = req.body
 
-        await Order.destroy({where:{id}})
+        await Order.destroy({where: {id}})
+        return res.json({success:true})
     } catch (e) {
         console.log('something went wrong')
     }

@@ -1,6 +1,5 @@
 const admin = [
     {
-        id: 1,
         email: "admin@mail.com",
         password: "$2a$10$qp/hOZOYixc4gpP/gjg7se/hhWRJ.kfzNgPRaEd.HD5TqkZ02RpDG",
         updatedAt: "2022-06-09T07:10:14.369Z",
