@@ -30,11 +30,16 @@ module.exports = (sequelize, DataTypes) => {
 
     let Image = sequelize.define("ProductImage");
     let Order = sequelize.define("Order")
+    let Categoy = sequelize.define("Category")
     Product.hasMany(Image, {
         foreignKey: "productId"
     })
     Product.hasMany(Order,{
         foreignKey:"productId"
+    })
+
+    Product.belongsTo(Categoy,{
+        foreignKey:"categoryId"
     })
 
     return Product;

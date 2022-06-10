@@ -21,5 +21,10 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Category',
   });
+
+  let Product = sequelize.define("Product")
+  Category.belongsTo(Product,{
+    foreignKey:"id"
+  })
   return Category;
 };

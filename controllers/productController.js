@@ -1,5 +1,7 @@
 const Product = require("../models").Product
 const Images = require("../models").ProductImage
+const Category = require("../models").Category
+
 const {Op} = require('sequelize');
 const create = async (req, res) => {
     try {
@@ -36,10 +38,9 @@ const create = async (req, res) => {
     }
 }
 
-
 const getAll = async (req, res) => {
     try {
-        const {search} = req.query
+        const {search,categoryId} = req.query
         const offset = Number.parseInt(req.query.offset) || 0;
         const limit = Number.parseInt(req.query.limit) || 2;
         let queryObj = {}
@@ -48,11 +49,16 @@ const getAll = async (req, res) => {
                 [Op.substring]: String(search)
             }
         }
+        if(categoryId){
+            queryObj["categoryId"] = {
+                [Op.eq]: String(categoryId)
+            }
+        }
         const allPosts = await Product.findAll({
             where: queryObj,
             offset: offset * limit,
             limit,
-            include: [Images],
+            include: [Images,Category],
             order: [
                 ['createdAt', 'DESC']
             ]

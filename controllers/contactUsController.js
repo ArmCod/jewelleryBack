@@ -1,6 +1,5 @@
 const ContactUs = require("../models").ContactUs
 const nodemailer = require("nodemailer");
-
 const create = async (req, res) => {
     try {
         const {subject, name, email, message} = req.body
