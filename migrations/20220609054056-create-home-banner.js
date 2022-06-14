@@ -11,6 +11,9 @@ module.exports = {
             image: {
                 type: Sequelize.STRING
             },
+            titleHy:Sequelize.STRING,
+            titleRu:Sequelize.STRING,
+            titleEn:Sequelize.STRING,
             textHy: Sequelize.STRING(1234),
             textRu: Sequelize.STRING(1234),
             textEn: Sequelize.STRING(1234),

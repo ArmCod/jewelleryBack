@@ -42,7 +42,7 @@ const getAll = async (req, res) => {
     try {
         const {search,categoryId} = req.query
         const offset = Number.parseInt(req.query.offset) || 0;
-        const limit = Number.parseInt(req.query.limit) || 2;
+        const limit = Number.parseInt(req.query.limit) || 4;
         let queryObj = {}
         if (search) {
             queryObj["nameHy"] = {
@@ -50,10 +50,12 @@ const getAll = async (req, res) => {
             }
         }
         if(categoryId){
+            console.log(categoryId,"categoryId")
             queryObj["categoryId"] = {
                 [Op.eq]: String(categoryId)
             }
         }
+        console.log(queryObj,"2745845785475521")
         const allPosts = await Product.findAll({
             where: queryObj,
             offset: offset * limit,

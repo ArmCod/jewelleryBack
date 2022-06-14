@@ -2,9 +2,9 @@ const Category = require("../models").Category
 
 const create = async (req,res) => {
     try {
-        const {nameHy,nameRu,nameEn} = req.body
-        const newCategory =await Category.create({
-            nameHy,nameRu,nameEn
+        const {nameHy,nameRu,nameEn,image} = req.body
+        await Category.create({
+            nameHy,nameRu,nameEn,image
         })
         const allCategories = await Category.findAll()
         return res.json(allCategories)
@@ -24,13 +24,14 @@ const getAll = async (req,res) => {
 
 const edit = async (req,res) => {
     try {
-        const {id,nameHy,nameRu,nameEn} = req.body
+        const {id,nameHy,nameRu,nameEn,image} = req.body
 
         const category = await Category.findOne({where:{id}})
 
         category.nameHy = nameHy
         category.nameRu = nameRu
         category.nameEn = nameEn
+        category.image = image
         await category.save()
         const allCategories = await Category.findAll()
         return res.json(allCategories)

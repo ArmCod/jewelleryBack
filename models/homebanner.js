@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   HomeBanner.init({
     image: DataTypes.STRING,
+    titleHy:DataTypes.STRING,
+    titleRu:DataTypes.STRING,
+    titleEn:DataTypes.STRING,
     textHy: DataTypes.STRING(1234),
     textRu: DataTypes.STRING(1234),
     textEn: DataTypes.STRING(1234)
