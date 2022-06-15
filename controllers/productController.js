@@ -42,7 +42,7 @@ const getAll = async (req, res) => {
     try {
         const {search,categoryId} = req.query
         const offset = Number.parseInt(req.query.offset) || 0;
-        const limit = Number.parseInt(req.query.limit) || 4;
+        const limit = Number.parseInt(req.query.limit) || 8;
         let queryObj = {}
         if (search) {
             queryObj["nameHy"] = {
