@@ -199,6 +199,132 @@ const videoBanner = [
     }
 ]
 
+const productText = [
+    {
+        textHy: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+        textRu: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+        textEn: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    }
+]
+
+const images = [
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://res.cloudinary.com/armcoding/image/upload/v1655278500/aoahks8qwgfcolcizya8.jpg",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+]
+
+const portfolioVideos = [
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+    {
+        image:"https://youtu.be/cRLhQRaxGj8",
+        updatedAt: "2022-06-09T09:38:58.086Z",
+        createdAt: "2022-06-09T09:38:58.086Z"
+    },
+]
+
 
 module.exports = {
     videos,
@@ -209,5 +335,8 @@ module.exports = {
     homeBanner,
     homeFooter,
     detailFooter,
-    videoBanner
+    videoBanner,
+    productText,
+    images,
+    portfolioVideos
 }

@@ -1,8 +1,8 @@
 const Product = require("../models").Product
 const Images = require("../models").ProductImage
 const Category = require("../models").Category
-
 const {Op} = require('sequelize');
+
 const create = async (req, res) => {
     try {
         const {
@@ -50,7 +50,6 @@ const getAll = async (req, res) => {
             }
         }
         if(categoryId){
-            console.log(categoryId,"categoryId")
             queryObj["categoryId"] = {
                 [Op.eq]: String(categoryId)
             }

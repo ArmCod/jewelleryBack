@@ -19,6 +19,8 @@ const homeBannerRouter = require("./routes/homeBanner")
 const homeFooter = require("./routes/homeFooter")
 const detailFooter = require("./routes/detailFooter")
 const contactUsController = require("./routes/contactUs")
+const productTextRouter = require('./routes/productText')
+const portfoliosRouter = require('./routes/portfolio')
 require('dotenv').config()
 var app = express();
 app.use(cors())
@@ -48,6 +50,8 @@ app.use('/api/v1/homeBanner', homeBannerRouter);
 app.use('/api/v1/homeFooter', homeFooter);
 app.use('/api/v1/detailFooter', detailFooter);
 app.use('/api/v1/contactUs', contactUsController);
+app.use('/api/v1/text', productTextRouter);
+app.use('/api/v1/portfolio', portfoliosRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
